@@ -65,107 +65,12 @@ export const Header = async ({ cart, data }: Props) => {
                 </QuickSearch>
               </NavigationMenuItem>
             )}
-            <NavigationMenuItem className={`hidden xl:flex ${customerId ? 'self-stretch' : ''}`}>
-              {customerId ? (
-                <div className="group/account flex cursor-pointer items-center">
-                  <Link
-                    aria-label="Account"
-                    className="p-3 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20"
-                    href="/account"
-                  >
-                    <User aria-hidden="true" />
-                  </Link>
-
-                  <ul className="absolute -right-12 top-full z-10 hidden cursor-default bg-white p-6 pb-8 shadow-md group-hover/account:block [&>li]:mb-2">
-                    <li>
-                      <Link
-                        className="whitespace-nowrap font-semibold focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/20"
-                        href="/account"
-                      >
-                        My account
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className="whitespace-nowrap focus-visible:outline-none focus-visible:ring-4"
-                        href="/account/orders"
-                      >
-                        Orders
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className="whitespace-nowrap focus-visible:outline-none focus-visible:ring-4"
-                        href="/account/messages"
-                      >
-                        Messages
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className="whitespace-nowrap focus-visible:outline-none focus-visible:ring-4"
-                        href="/account/addresses"
-                      >
-                        Addresses
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className="whitespace-nowrap focus-visible:outline-none focus-visible:ring-4"
-                        href="/account/wishlists"
-                      >
-                        Wish lists
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className="whitespace-nowrap focus-visible:outline-none focus-visible:ring-4"
-                        href="/account/recently-viewed"
-                      >
-                        Recently viewed
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className="whitespace-nowrap focus-visible:outline-none focus-visible:ring-4"
-                        href="/account/settings"
-                      >
-                        Account Settings
-                      </Link>
-                    </li>
-                    <li>
-                      <form action={logout}>
-                        <Button
-                          className="justify-start p-0 font-normal text-black hover:bg-transparent hover:text-black"
-                          type="submit"
-                          variant="subtle"
-                        >
-                          Log out
-                        </Button>
-                      </form>
-                    </li>
-                  </ul>
-                </div>
-              ) : (
-                <NavigationMenuLink asChild>
-                  <Link aria-label="Login" href="/login">
-                    <User />
-                  </Link>
-                </NavigationMenuLink>
-              )}
-            </NavigationMenuItem>
+            {/* Removed user account and shopping cart icons */}
+            {/* Insert "Let's Talk" button here */}
             <NavigationMenuItem>
-              <p role="status">
-                <Suspense
-                  fallback={
-                    <CartLink>
-                      <ShoppingCart aria-label="cart" />
-                    </CartLink>
-                  }
-                >
-                  {cart}
-                </Suspense>
-              </p>
+              <button className="py-2.5 px-[30px] text-base leading-6 font-semibold border-none bg-pink-500 text-white text-center hover:bg-pink-700 flex items-center justify-center whitespace-nowrap w-[115px] h-[57px]" aria-label="Let's Talk" type="button">
+                Let's Talk
+              </button>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuToggle className="xl:hidden" />

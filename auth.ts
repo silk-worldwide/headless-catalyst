@@ -21,6 +21,7 @@ declare module 'next-auth' {
 }
 
 const config = {
+  secret: process.env.NEXTAUTH_SECRET,
   session: {
     strategy: 'jwt',
   },

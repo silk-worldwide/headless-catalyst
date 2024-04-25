@@ -51,7 +51,7 @@ const NavigationMenu = forwardRef<
           <div className="relative">
             <div
               className={cn(
-                'group flex min-h-[92px] items-center justify-between gap-6 bg-white px-6 2xl:container sm:px-10 lg:gap-8 lg:px-12 2xl:mx-auto 2xl:px-0',
+                'group flex min-h-[110px] items-center justify-between gap-8 bg-white px-6 2xl:container sm:px-10 lg:gap-8 lg:px-12 2xl:mx-auto 2xl:px-0',
                 className,
               )}
             >
@@ -78,7 +78,7 @@ const NavigationMenuList = forwardRef<
   ComponentPropsWithRef<typeof NavigationMenuPrimitive.List>
 >(({ children, className, ...props }, ref) => (
   <NavigationMenuPrimitive.List
-    className={cn('flex items-center gap-2 lg:gap-4', className)}
+    className={cn('flex items-center gap-6 lg:gap-4', className)}
     ref={ref}
     {...props}
   >
